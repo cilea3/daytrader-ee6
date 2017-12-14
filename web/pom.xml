@@ -16,7 +16,7 @@
         <repository>
             <id>local.net</id>
             <name>Repository hosting the jee6 artifacts</name>
-            <url>/usr/share/maven/repository</url>
+            <url>file:///usr/share/maven/repository</url>
         </repository>
     </repositories>
     <dependencies>
