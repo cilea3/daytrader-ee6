@@ -203,7 +203,7 @@
     <pluginRepository>
       <id>liberty-features</id>
       <name>liberty-features</name>
-      <url>file:///usr/share/wlp/repo/wlp-featureRepo-17.0.0.2.zip</url>
+      <url>file://usr/share/wlp/repo/wlp-featureRepo-17.0.0.2.zip</url>
       <snapshots>
         <enabled>true</enabled>
       </snapshots>
