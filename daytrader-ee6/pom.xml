@@ -31,10 +31,6 @@
       </dependencies>
       <build>
         <plugins>
-          <!-- 
-				See Add the Liberty Maven Plugin in step 8
-	            -->
-
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
@@ -191,6 +187,20 @@
       </build>
     </profile>
   </profiles>
+  <pluginRepositories>
+    <!-- Configure Sonatype OSS Maven snapshots repository -->
+    <pluginRepository>
+      <id>sonatype-nexus-snapshots</id>
+      <name>Sonatype Nexus Snapshots</name>
+      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+    </pluginRepository>
+  </pluginRepositories>
   <dependencies>
     <dependency>
       <groupId>com.ibm.websphere.samples.daytrader</groupId>
