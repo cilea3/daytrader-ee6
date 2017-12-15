@@ -13,6 +13,18 @@
             <name>Repository hosting the jee6 artifacts</name>
             <url>http://download.java.net/maven/2</url>
         </repository>
+        <repository>
+            <id>snapshots</id>
+            <url>
+                file:///usr/share/maven/repository
+            </url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>             
     </repositories>
     <dependencies>
         <dependency>

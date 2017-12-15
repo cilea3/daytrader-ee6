@@ -6,10 +6,12 @@ pipeline {
  sh '''
  echo "BUILD NUMBER: ${BUILD_NUMBER}"
  cd dt-ejb
- mvn clean test
+ mvn clean install
  cd ../Rest
+ mvn clean install
  mvn clean test
  cd ../web
+ mvn clean install
  mvn clean test
  '''
  }
