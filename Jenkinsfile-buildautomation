@@ -15,7 +15,7 @@ pipeline {
  mvn clean test
  cd ../daytrader-ee6
  mvn clean install
- mvn verify -Pci-liberty
+ mvn verify -Pci-liberty -X
  '''
  }
  }
