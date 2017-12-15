@@ -200,6 +200,17 @@
         <enabled>false</enabled>
       </releases>
     </pluginRepository>
+    <pluginRepository>
+      <id>liberty-features</id>
+      <name>liberty-features</name>
+      <url>file:///usr/share/wlp/repo/wlp-featureRepo-17.0.0.2.zip</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+    </pluginRepository>
   </pluginRepositories>
   <dependencies>
     <dependency>
