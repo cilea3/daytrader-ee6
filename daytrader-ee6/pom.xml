@@ -71,6 +71,24 @@
                   </resources>
                 </configuration>
               </execution>
+	          <execution>
+	            <id>copy-install-feature-proxy</id>
+	            <phase>package</phase>
+	            <goals>
+	              <goal>copy-resources</goal>
+	            </goals>
+	            <configuration>
+	              <outputDirectory>${project.build.directory}/wlp/etc</outputDirectory>
+	              <resources>          
+	                <resource>
+	                  <directory>>${project.basedir}/src/main/resources/etc</directory>
+	                  <includes>
+	                      <include>repositories.properties</include>
+	                  </includes>    
+	                </resource>
+	              </resources>              
+	            </configuration>            
+	          </execution>
               <execution>
                 <id>copy-app</id>
                 <phase>package</phase>
@@ -203,7 +221,7 @@
     <pluginRepository>
       <id>liberty-features</id>
       <name>liberty-features</name>
-      <url>file://usr/share/wlp/repo/wlp-featureRepo-17.0.0.2.zip</url>
+      <url>file:///usr/share/wlp/repo/wlp-featureRepo-17.0.0.2.zip</url>
       <snapshots>
         <enabled>true</enabled>
       </snapshots>
