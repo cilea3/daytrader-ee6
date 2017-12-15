@@ -81,7 +81,7 @@
 	              <outputDirectory>${project.build.directory}/wlp/etc</outputDirectory>
 	              <resources>          
 	                <resource>
-	                  <directory>>${project.basedir}/src/main/resources/etc</directory>
+	                  <directory>${project.basedir}/src/main/resources/etc</directory>
 	                  <includes>
 	                      <include>repositories.properties</include>
 	                  </includes>    
@@ -211,17 +211,6 @@
       <id>sonatype-nexus-snapshots</id>
       <name>Sonatype Nexus Snapshots</name>
       <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-    </pluginRepository>
-    <pluginRepository>
-      <id>liberty-features</id>
-      <name>liberty-features</name>
-      <url>file:///usr/share/wlp/repo/wlp-featureRepo-17.0.0.2.zip</url>
       <snapshots>
         <enabled>true</enabled>
       </snapshots>
