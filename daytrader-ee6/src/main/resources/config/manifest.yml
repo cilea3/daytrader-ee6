@@ -9,3 +9,6 @@ applications:
     DAYTRADER3_CONTEXT_ROOT_URL: "https://dt.apps.pcf.gsic-sus.net"
     IBM_JVM_LICENSE: L-PMAA-A3Z8P2
     IBM_LIBERTY_LICENSE: L-SWIS-AN5S5K
+    JBP_CONFIG_LIBERTY: "app_archive: {features: [jsf-2.0, jsp-2.2, servlet-3.0, ejbLite-3.1, cdi-1.0, jpa-2.0, jdbc-4.0, jndi-1.0, managedBeans-1.0, jaxrs-1.1, wasjmsserver-1.0, jmsmdb-3.1, wasjmsclient-1.1 ]}"
+
+    
