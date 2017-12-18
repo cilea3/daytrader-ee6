@@ -41,6 +41,9 @@ pipeline {
  echo "Deploying...."
  if cf app $CF_APP_NAME; then
  echo "Application already exists, pushing new version..."
+ 
+ cf set-env myApplication JBP_CONFIG_LIBERTY 'app_archive: {features: [jsf-2.0, wasjmsserver-1.0, jaxrs-1.1, ejblite-3.1, jmsmdb-3.1, wasjmsclient-1.1]}
+ 
  cf push $CF_APP_NAME -n $CF_APP_NAME -f ../src/main/resources/config/manifest.yml -p wlp/usr/servers/Daytrader3Sample
  else
  echo "New Application, push and restage required..."
