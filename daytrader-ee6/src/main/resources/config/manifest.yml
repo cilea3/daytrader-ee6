@@ -7,8 +7,3 @@ applications:
   domain: apps.pcf.gsic-sus.net
   env: 
     DAYTRADER3_CONTEXT_ROOT_URL: "https://dt.apps.pcf.gsic-sus.net"
-<<<<<<< HEAD
-    
-=======
-    
->>>>>>> a0ffd443d52abcdf5af3aa774a54da5e14af7436
