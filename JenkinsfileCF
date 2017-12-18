@@ -3,8 +3,8 @@ pipeline {
  parameters {
  string(name: 'CF_USER', defaultValue: '<your userid>')
  string(name: 'CF_PWD', defaultValue: '<your password>')
- # string(name: 'CF_ORG', defaultValue: '<your org>')
- # string(name: 'CF_SPACE', defaultValue: 'dev')
+ string(name: 'CF_ORG', defaultValue: '<your org>')
+ string(name: 'CF_SPACE', defaultValue: 'dev')
  string(name: 'CF_APP_NAME', defaultValue: '<your app name>')
  }
  stages {
