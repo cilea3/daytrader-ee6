@@ -23,7 +23,7 @@ pipeline {
  # build EAR, create Liberty server, run tests
  cd ../daytrader-ee6
  mvn clean install 
- mvn verify -Pci-liberty
+ mvn verify -Pci-liberty 
  cd ..
  '''
  }
