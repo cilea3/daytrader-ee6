@@ -1,10 +1,10 @@
 applications:
 - name: daytrader-ee6
-  memory: 512M
+  memory: 2048M
   disk_quota: 1024M
   instances: 1
-  host: <unique_sub_domain>
-  domain: mybluemix.net
+  host: dt
+  domain: apps.pcf.gsic-sus.net
   env: 
-    DAYTRADER3_CONTEXT_ROOT_URL: "https://<unique_sub_domain>.mybluemix.net/daytrader"
+    DAYTRADER3_CONTEXT_ROOT_URL: "https://dt.apps.pcf.gsic-sus.net"
     
