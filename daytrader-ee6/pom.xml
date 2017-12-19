@@ -176,10 +176,10 @@
                   <features>
                     <acceptLicense>true</acceptLicense>
                     <feature>localconnector-1.0</feature>
-                    <feature>jsf-2.2</feature>
+                    <feature>jsf-2.0</feature>
                     <feature>wasjmsserver-1.0</feature>
                     <feature>jaxrs-2.0</feature>
-                    <feature>ejblite-3.2</feature>
+                    <feature>ejblite-3.1</feature>
                     <feature>jpa-2.1</feature>
                     <feature>jmsmdb-3.1</feature>
                     <feature>wasjmsclient-1.1</feature>
@@ -245,10 +245,10 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.0.2</version>
+        <version>2.3.2</version>
         <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
+          <source>1.8</source>
+          <target>1.8</target>
         </configuration>
       </plugin>
       <plugin>
