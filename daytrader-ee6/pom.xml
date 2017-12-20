@@ -149,7 +149,7 @@
                 <version>17.0.0.3</version>
                 <type>zip</type>
               </assemblyArtifact>
-              <assemblyInstallDirectory> ${project.build.directory} </assemblyInstallDirectory>
+            <assemblyInstallDirectory> ${project.build.directory} </assemblyInstallDirectory>
             </configuration>
             <executions>
               <execution>
