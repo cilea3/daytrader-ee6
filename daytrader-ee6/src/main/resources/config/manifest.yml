@@ -9,7 +9,7 @@ applications:
     DAYTRADER3_CONTEXT_ROOT_URL: "https://dt.apps.pcf.gsic-sus.net/daytrader"
     IBM_JVM_LICENSE: L-PMAA-A3Z8P2
     IBM_LIBERTY_LICENSE: L-SWIS-AN5S5K
-    JVM: ibmjdk
+    JVM: openjdk
     http_proxy: http://netutils.gsic-sus.net:8888
     https_proxy: http://netutils.gsic-sus.net:8888
     
