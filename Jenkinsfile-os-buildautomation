@@ -1,0 +1,23 @@
+pipeline {
+ agent any
+ stages {
+ stage('Build Automation') {
+ steps {
+ sh '''
+ echo "BUILD NUMBER: ${BUILD_NUMBER}"
+ cd dt-ejb
+ mvn clean install
+ cd ../Rest
+ mvn clean install
+ mvn clean test
+ cd ../web
+ mvn clean install
+ mvn clean test
+ cd ../daytrader-ee6
+ mvn clean install
+ mvn verify -Pci-docker
+ '''
+ }
+ }
+ }
+}
