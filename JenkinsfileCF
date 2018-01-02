@@ -44,11 +44,11 @@ pipeline {
     # cf push $CF_APP_NAME -n $CF_APP_NAME -f ../src/main/resources/config/manifest.yml -p wlp/usr/servers/Daytrader3Sample
     # cf set-env $CF_APP_NAME JBP_CONFIG_LIBERTY 'app_archive: {features: [jsf-2.0, wasjmsserver-1.0, jaxrs-1.1, ejblite-3.1, jmsmdb-3.1, wasjmsclient-1.1]}'
     # cf restage $CF_APP_NAME
-    cf push $CF_APP_NAME -f ../src/main/resources/config/manifest.yml -p wlp/usr/servers/Daytrader3Sample -b liberty_buildpack
+    cf push $CF_APP_NAME -f ../src/main/resources/config/manifest.yml -p wlp/usr/servers/Daytrader3Sample -b liberty-buildpack
  else
     echo "New Application, push and restage required..."
     # cf push $CF_APP_NAME -n $CF_APP_NAME -f ../src/main/resources/config/manifest.yml -p wlp/usr/servers/Daytrader3Sample
-    cf push $CF_APP_NAME -f ../src/main/resources/config/manifest.yml -p wlp/usr/servers/Daytrader3Sample -b liberty_buildpack
+    cf push $CF_APP_NAME -f ../src/main/resources/config/manifest.yml -p wlp/usr/servers/Daytrader3Sample -b liberty-buildpack
     cf restage $CF_APP_NAME
  fi
  '''
