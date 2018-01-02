@@ -35,8 +35,8 @@ pipeline {
  cd daytrader-ee6/target
  echo "CF Login..."
  # cf api <a href="https://api.ng.bluemix.net">https://api.ng.bluemix.net</a>
- export http_proxy=http://netutils.gsic-sus.net:8888
- export https_proxy=http://netutils.gsic-sus.net:8888
+ # export http_proxy=http://netutils.gsic-sus.net:8888
+ # export https_proxy=http://netutils.gsic-sus.net:8888
  cf login -u $CF_USER -p $CF_PWD -o "GSIC SUS" -s EVALUATE --skip-ssl-validation -a api.system.pcf.gsic-sus.net
  echo "Deploying...."
  if cf app $CF_APP_NAME; then
