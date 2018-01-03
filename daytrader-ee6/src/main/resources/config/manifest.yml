@@ -7,7 +7,6 @@ applications:
   domain: apps.pcf.gsic-sus.net
   env: 
     DAYTRADER3_CONTEXT_ROOT_URL: "https://dt.apps.pcf.gsic-sus.net/daytrader"
-    JVM: openjdk
     IBM_JVM_LICENSE: "L-PMAA-A3Z8P2"
     IBM_LIBERTY_LICENSE: "L-SWIS-ASNMK6"
 
