@@ -303,13 +303,17 @@
 			    <execution>
 			      <id>copy-dockerfile</id>
 			      <phase>package</phase>
-			      <goals> <goal>copy-resources</goal> </goals>
+			      <goals> 
+			        <goal>copy-resources</goal> 
+			      </goals>
 			      <configuration>
 			        <outputDirectory>${project.build.directory}</outputDirectory>
 			        <resources>
 			          <resource>
 			            <directory>${project.basedir}/src/main/resources/config</directory>
-			            <includes> <include>Dockerfile</include> </includes>
+			            <includes>
+			              <include>Dockerfile</include>
+			            </includes>
 			          </resource>
 			        </resources>
 			      </configuration>
@@ -402,7 +406,9 @@
 			  <executions>
 			    <execution>
 			      <phase>package</phase>
-			      <goals> <goal>build</goal> </goals>
+			      <goals>
+			        <goal>build</goal>
+			      </goals>
 			    </execution>
 			  </executions>
 			  <configuration>
