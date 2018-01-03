@@ -431,7 +431,7 @@
 			            <name>${project.artifactId}:${project.version}</name>
 			            <alias>${project.artifactId}</alias>
 			            <run>
-			              <ports> <port>9080:9080</port><port>9443:9443</port> </ports>                         
+			              <ports> <port>9081:9081</port><port>9543:9543</port> </ports>                         
 			              <wait>
 			                <log>
 			                  (?s)The server defaultServer is ready to run a smarter planet.
