@@ -13,7 +13,7 @@
       <id>ci-liberty</id>
       <properties>
         <wlpServerName>Daytrader3Sample</wlpServerName>
-        <daytraderAppRoute>http://localhost:9080</daytraderAppRoute>
+        <daytraderAppRoute>http://localhost:9081</daytraderAppRoute>
       </properties>
       <dependencies>
         <dependency>
@@ -209,7 +209,7 @@
       <id>ci-docker</id>  
       <properties>
 		 <wlpServerName>Daytrader3Sample</wlpServerName>
-		 <daytraderAppRoute>http://192.168.254.9:9080</daytraderAppRoute>
+		 <daytraderAppRoute>http://192.168.254.9:9081</daytraderAppRoute>
 	  </properties>      
       <dependencies>
 	    <dependency>
