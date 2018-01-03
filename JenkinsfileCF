@@ -37,14 +37,15 @@ pipeline {
  # export http_proxy=http://netutils.gsic-sus.net:8888
  # export https_proxy=http://netutils.gsic-sus.net:8888
  cf login -u $CF_USER -p $CF_PWD -o "GSIC SUS" -s EVALUATE --skip-ssl-validation -a api.system.pcf.gsic-sus.net
- cf set-env $CF_APP_NAME JVM 'ibmjdk'
- cf set-env $CF_APP_NAME IBM_JVM_LICENSE 'L-PMAA-A3Z8P2'
- cf set-env $CF_APP_NAME IBM_LIBERTY_LICENSE 'L-SWIS-ASNMK6'
  echo "Deploying...."
  if cf app $CF_APP_NAME; then
     echo "Application already exists, pushing new version..."
     # cf push $CF_APP_NAME -f ../src/main/resources/config/manifest.yml -p wlp/usr/servers/Daytrader3Sample -b liberty-buildpack
     cf push $CF_APP_NAME -f ../src/main/resources/config/manifest.yml -p wlp/usr/servers/Daytrader3Sample -b https://github.com/cloudfoundry/ibm-websphere-liberty-buildpack.git
+    cf set-env $CF_APP_NAME JVM 'ibmjdk'
+    cf set-env $CF_APP_NAME IBM_JVM_LICENSE 'L-PMAA-A3Z8P2'
+    cf set-env $CF_APP_NAME IBM_LIBERTY_LICENSE 'L-SWIS-ASNMK6'
+    cf restage $CF_APP_NAME
  else
     echo "New Application, push and restage required..."
     # cf push $CF_APP_NAME -n $CF_APP_NAME -f ../src/main/resources/config/manifest.yml -p wlp/usr/servers/Daytrader3Sample -b liberty-buildpack
