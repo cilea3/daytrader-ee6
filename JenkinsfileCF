@@ -34,8 +34,8 @@ pipeline {
  #!/bin/bash
  cd daytrader-ee6/target
  echo "CF Login..."
- export http_proxy=http://netutils.gsic-sus.net:8888
- export https_proxy=http://netutils.gsic-sus.net:8888
+ # export http_proxy=http://netutils.gsic-sus.net:8888
+ # export https_proxy=http://netutils.gsic-sus.net:8888
  cf login -u $CF_USER -p $CF_PWD -o "GSIC SUS" -s EVALUATE --skip-ssl-validation -a api.system.pcf.gsic-sus.net
  cf set-env $CF_APP_NAME JVM 'ibmjdk'
  cf set-env $CF_APP_NAME IBM_JVM_LICENSE 'L-PMAA-A3Z8P2'
