@@ -275,7 +275,7 @@
 			          <resource>
 			            <directory>${project.build.directory}</directory>
 			            <includes>
-			              <include>${project.artifactId}-${project.version}.ear</include>
+			              <include>*.ear</include>
 			            </includes>
 			          </resource>
 			        </resources>
@@ -295,7 +295,6 @@
 			        </resources> 
 			      </configuration> 
 			    </execution> 
-			
 			  </executions>
 			</plugin>
 			<plugin>
