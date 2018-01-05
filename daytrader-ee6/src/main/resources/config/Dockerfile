@@ -18,8 +18,6 @@ ENV STI_SCRIPTS_PATH="/usr/local/s2i" \
     JOLOKIA_VERSION="1.3.5"
 
 # Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH
-COPY ./s2i/bin/ $STI_SCRIPTS_PATH 
-
 
 RUN useradd -u 1001 -r -g 0 -s /sbin/nologin \
       -c "Default Application User" default && \
@@ -36,14 +34,6 @@ RUN useradd -u 1001 -r -g 0 -s /sbin/nologin \
     chown -R 1001:0 $WORKDIR && \
     chmod -R g+rw $WORKDIR && \
     ln $STI_SCRIPTS_PATH/assemble-runtime $STI_SCRIPTS_PATH/assemble    
-
-COPY ./placeholder.txt $WORKDIR/artifacts 
-COPY ./placeholder.txt $WORKDIR/config 
-
-WORKDIR $WORKDIR
-
-EXPOSE $WLP_DEBUG_ADDRESS
-#EXPOSE $JOLOKIA_PORT
 
 RUN chmod 777 -R /opt/ibm/wlp/ /logs /config
 
