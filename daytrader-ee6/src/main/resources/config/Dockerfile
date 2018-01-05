@@ -32,8 +32,8 @@ RUN useradd -u 1001 -r -g 0 -s /sbin/nologin \
     mkdir -p $WORKDIR/artifacts && \
     mkdir -p $WORKDIR/config && \
     chown -R 1001:0 $WORKDIR && \
-    chmod -R g+rw $WORKDIR && \
-    ln $STI_SCRIPTS_PATH/assemble-runtime $STI_SCRIPTS_PATH/assemble    
+    chmod -R g+rw $WORKDIR
+       
 
 RUN chmod 777 -R /opt/ibm/wlp/ /logs /config
 
