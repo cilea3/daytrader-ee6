@@ -27,14 +27,13 @@ pipeline {
  stage('Continuous Delivery') {
  steps {
  sh '''
- #!/bin/bash
-    echo "docker login to repo"
+#    echo "docker login to repo"
     docker login -u cilea3 -p cilea3 $ICP_MASTER_CFC
-    echo "docker tag"
+#    echo "docker tag"
     docker tag demo/daytrader-ee6:1.0-SNAPSHOT $ICP_MASTER_CFC/daytrader-ee6
-    echo "docker push"
+#    echo "docker push"
     docker push $ICP_MASTER_CFC/daytrader-ee6
-    echo "OC login"
+#    echo "OC login"
     oc login https://ocpmaster.gsic-rh-poc.net:8443 -u cilea -p F@ll2017
     oc project daytrader
     oc new-app $ICP_MASTER_CFC/daytrader-ee6 --name=liberty 
