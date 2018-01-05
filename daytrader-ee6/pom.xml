@@ -368,6 +368,7 @@
 			  <artifactId>docker-maven-plugin</artifactId>
 			  <version>0.20.1</version>
 			  <executions>
+		          <!--
 			    <execution>
 			      <id>start</id>
 			      <phase>pre-integration-test</phase>
@@ -390,6 +391,7 @@
 			        </images>
 			      </configuration>
 			    </execution>
+                            --> 
 			    <execution>
 			      <id>stop</id>
 			      <phase>post-integration-test</phase>
