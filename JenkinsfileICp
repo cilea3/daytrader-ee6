@@ -29,7 +29,7 @@ pipeline {
  sh '''
  #!/bin/bash
 #    echo "docker login to repo"
-cd ../daytrader-ee6
+cd ..
     docker login -u cilea3 -p cilea3 $ICP_MASTER_CFC
 #    echo "docker tag"
     docker tag demo/daytrader-ee6:1.0-SNAPSHOT $ICP_MASTER_CFC/daytrader-ee6
