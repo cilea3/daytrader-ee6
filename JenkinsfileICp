@@ -1,39 +1,46 @@
 pipeline {
-    agent any
-    parameters {
-        string(name: 'ICP_MASTER_CFC', defaultValue: 'cilea3/my-private-repository')
-    }
-    stages {
-        stage('Continuous Integration') {
-            steps {
-                sh '''
-                   cd dt-ejb
-                   mvn clean install
-                   cd ../Rest
-                   mvn clean install
-                   cd ../web
-                   mvn clean install
-                   cd ../daytrader-ee6
-                   mvn clean verify –Pci-docker
-                   cd ..
-                   '''
-             }
-        }
-        stage('Continuous Delivery') {
-            steps {
-                sh '''
-                    echo "docker login to repo"
-                    docker login -u cilea3 -p cilea3 $ICP_MASTER_CFC
-                    echo "docker tag"
-                    docker tag demo/daytrader-ee6:1.0-SNAPSHOT $ICP_MASTER_CFC/daytrader-ee6
-                    echo "docker push"
-                    docker push $ICP_MASTER_CFC/daytrader-ee6
-                    echo "OC login"
-                    oc login https://ocpmaster.gsic-rh-poc.net:8443 -u cilea -p F@ll2017
-                    oc project daytrader
-                    oc new-app $ICP_MASTER_CFC/daytrader-ee6 --name=liberty
-                '''
-            }
-        }
-    }
+ agent any
+ parameters {
+ string(name: 'ICP_MASTER_CFC', defaultValue: 'cilea3/my-private-repository')
+ }
+ stages {
+ stage('Continuous Integration') {
+ steps {
+ sh '''
+ # build dt-ejb project
+ cd dt-ejb
+ mvn clean install
+ # build Rest project
+ cd ../Rest
+ mvn clean install
+ # build web project
+ cd ../web
+ mvn clean install
+ # build EAR, create Liberty server, run tests
+ cd ../daytrader-ee6
+ mvn clean install 
+ mvn verify -Pci-docker 
+ cd ..
+ '''
+ }
+ }
+ stage('Continuous Delivery') {
+ steps {
+ sh '''
+ #!/bin/bash
+    echo "docker login to repo"
+    docker login -u cilea3 -p cilea3 $ICP_MASTER_CFC
+    echo "docker tag"
+    docker tag demo/daytrader-ee6:1.0-SNAPSHOT $ICP_MASTER_CFC/daytrader-ee6
+    echo "docker push"
+    docker push $ICP_MASTER_CFC/daytrader-ee6
+    echo "OC login"
+    oc login https://ocpmaster.gsic-rh-poc.net:8443 -u cilea -p F@ll2017
+    oc project daytrader
+    oc new-app $ICP_MASTER_CFC/daytrader-ee6 --name=liberty 
+  '''
+ }
+ }
+ }
 }
+
