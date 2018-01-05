@@ -36,9 +36,9 @@ pipeline {
 cd ..
 docker login -u $DUser -p $DPassword
 echo "docker tag"
-docker tag demo/daytrader-ee6:1.0-SNAPSHOT $ICP_MASTER_CFC/daytrader-ee6
+docker tag demo/daytrader-ee6:1.0-SNAPSHOT $ICP_MASTER_CFC:daytrader-ee6
 echo "docker push"
-docker push $ICP_MASTER_CFC/daytrader-ee6
+docker push $ICP_MASTER_CFC:daytrader-ee6
 echo "OC login"
 oc login https://ocpmaster.gsic-rh-poc.net:8443 -u $OCUser -p $OCPassword
 oc project daytrader
