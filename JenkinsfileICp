@@ -2,7 +2,11 @@ pipeline {
  agent any
  parameters {
  string(name: 'ICP_MASTER_CFC', defaultValue: 'cilea3/my-private-repository')
- }
+ string(name: 'DUser', defaultValue: '<user>')
+ string(name: 'DPassword', defaultValue: '<password>') 
+ string(name: 'OCUser', defaultValue: '<user>')
+ string(name: 'OCPassword', defaultValue: '<password>') 
+}
  stages {
  stage('Continuous Integration') {
  steps {
@@ -30,13 +34,13 @@ pipeline {
  #!/bin/bash
 #    echo "docker login to repo"
 cd ..
-docker login -u cilea3 -p cilea3
+docker login -u $DUser -p $DPassword
 echo "docker tag"
 docker tag demo/daytrader-ee6:1.0-SNAPSHOT $ICP_MASTER_CFC/daytrader-ee6
 echo "docker push"
 docker push $ICP_MASTER_CFC/daytrader-ee6
 echo "OC login"
-oc login https://ocpmaster.gsic-rh-poc.net:8443 -u cilea -p F@ll2017
+oc login https://ocpmaster.gsic-rh-poc.net:8443 -u $OCUser -p $OCPassword
 oc project daytrader
 oc new-app $ICP_MASTER_CFC/daytrader-ee6 --name=liberty 
 '''
