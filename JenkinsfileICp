@@ -43,6 +43,7 @@ echo "OC login"
 /var/lib/oc-tool/oc login https://ocpmaster.gsic-rh-poc.net:8443 -u $OCUser -p $OCPassword --insecure-skip-tls-verify=true
 /var/lib/oc-tool/oc project daytrader
 /var/lib/oc-tool/oc new-app $ICP_MASTER_CFC:daytrader-ee6 --name=daytrader6 
+/var/lib/oc-tool/oc expose svc daytrader6
 '''
  }
  }
