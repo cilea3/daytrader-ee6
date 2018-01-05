@@ -33,11 +33,16 @@ RUN useradd -u 1001 -r -g 0 -s /sbin/nologin \
     mkdir -p $WORKDIR/config && \
     chown -R 1001:0 $WORKDIR && \
     chmod -R g+rw $WORKDIR
-       
 
-RUN chmod 777 -R /opt/ibm/wlp/ /logs /config
+RUN chmod 777 -R /opt/ibm/wlp/
 
 USER 1001
 
 COPY wlp/usr/servers/Daytrader3Sample /opt/ibm/wlp/usr/servers/defaultServer
 RUN installUtility install --acceptLicense defaultServer
+
+USER root
+
+RUN chmod 777 -R /opt/ibm/wlp/
+
+
