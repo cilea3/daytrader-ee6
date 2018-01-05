@@ -30,7 +30,7 @@ pipeline {
  #!/bin/bash
 #    echo "docker login to repo"
 cd ..
-docker login -u cilea3 -p cilea3 $ICP_MASTER_CFC
+docker login -u cilea3 -p cilea3
 echo "docker tag"
 docker tag demo/daytrader-ee6:1.0-SNAPSHOT $ICP_MASTER_CFC/daytrader-ee6
 echo "docker push"
