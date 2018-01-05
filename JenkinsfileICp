@@ -40,7 +40,7 @@ docker tag demo/daytrader-ee6:1.0-SNAPSHOT $ICP_MASTER_CFC:daytrader-ee6
 echo "docker push"
 docker push $ICP_MASTER_CFC:daytrader-ee6
 echo "OC login"
-/var/lib/oc-tool/oc login https://ocpmaster.gsic-rh-poc.net:8443 -u $OCUser -p $OCPassword
+/var/lib/oc-tool/oc login https://ocpmaster.gsic-rh-poc.net:8443 -u $OCUser -p $OCPassword --insecure-skip-tls-verify=true
 /var/lib/oc-tool/oc project daytrader
 /var/lib/oc-tool/oc new-app $ICP_MASTER_CFC/daytrader-ee6 --name=liberty 
 '''
